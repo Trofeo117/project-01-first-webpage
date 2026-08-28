@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Webpage</title>
+    <style>
+        h1{
+            color:blue;
+            font-size: 48px;
+        }
+        p{
+            color: darkgreen;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        let count=0;
+        function sayhello(){
+            alert("Hello! You've clicked the button!");
+        }
+        function tellajoke(){
+            alert("Ryan's hairline!");
+        }
+        function ChangeText(){
+            document.getElementById("message").textContent="This text changed!";
+        }
+        function Iment(){
+            count = count + 1;
+            document.getElementById("Counter").textContent=count;
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>This is my first webpage!</p>
+    <button onclick="sayhello()">Click Me!</button>
+    <button onclick="tellajoke()">joke?</button>
+    <p id="message">This text will change!</p>
+    <button onclick="ChangeText()">Change Text</button>
+    <p id="Counter">0</p>
+    <button onclick="Iment()">Add one</button>
+</body>
+</html>
