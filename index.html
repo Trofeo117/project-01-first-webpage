@@ -27,6 +27,29 @@
             count = count + 1;
             document.getElementById("Counter").textContent=count;
         }
+        function CountToFive(){
+            for(let i=10;i<=15;i++){
+                console.log(i);
+            }
+        }
+        function MakeList(){
+            let html="";
+            for(let i=1;i<=5;i++){
+                html+="<li>Item"+i+"<li>";
+            }
+            document.getElementById("list").innerHTML="<u1>"+html+"</u1>";
+        }
+        function GreetUser(){
+            let name=document.getElementById("username").value;
+            document.getElementById("greeting").textContent="Hello "+name;
+        }
+        function GenerateList(){
+            let html="";
+            for(let i=1;i<=document.getElementById("listsize").value;i++){
+                html+="<li>Item"+i+"<li>";
+            }
+            document.getElementById("list_2").innerHTML="<u1>"+html+"</u1>";
+        }
     </script>
 </head>
 <body>
@@ -38,5 +61,15 @@
     <button onclick="ChangeText()">Change Text</button>
     <p id="Counter">0</p>
     <button onclick="Iment()">Add one</button>
+    <button onclick="CountToFive()">Count to five</button>
+    <div id="list"></div>
+    <button onclick="MakeList()">Create a list</button>
+    <h2>My Form</h2>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="GreetUser()">Greet me</button>
+    <p id="greeting"></p>
+    <div id="list_2"></div>
+    <input type="number" id="listsize" placeholder="Enter number of items">
+    <button onclick="GenerateList()">Generate list</button>
 </body>
 </html>
