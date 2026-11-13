@@ -50,6 +50,61 @@
             }
             document.getElementById("list_2").innerHTML="<u1>"+html+"</u1>";
         }
+        function ShowFruits(){
+            let fruits=["apple", "banana", "orange", "grape", "mango"];
+            let html="";
+            for(let i=0;i<fruits.length;i++){
+                html+="<li>"+fruits[i]+"</li>";
+            }
+            document.getElementById("fruitslist").innerHTML="<ul>"+html+"</ul>";
+        } 
+        function ShowAnimals(){
+            let animals=["dog", "cat", "elephant", "tiger"];
+            let html="";
+            for(let i=0;i<animals.length;i++){
+                html+="<li>"+animals[i]+"</li>";
+            }
+            document.getElementById("animalslist").innerHTML="<ul>"+html+"</ul>"
+        }
+        let todos=[];
+        function AddToDo(){
+            let task=document.getElementById("todoInput").value;
+            if(task===""){
+                alert("Please enter a task!");
+                return;
+            }
+            todos.push(task);
+            document.getElementById("todoInput").value="";
+            DisplayTodos();
+        }
+        function DisplayTodos(){
+            let html="";
+            for(let i=0;i<todos.length;i++){
+                html+="<li>"+todos[i]+"<button onclick='DeleteToDo("+i+")'>Delete</button></li>";
+            }
+            document.getElementById("todolist").innerHTML="<ul>"+html+"</ul>";
+        }
+        function DeleteToDo(index){
+            todos.splice(index,1);
+            DisplayToDos();
+        }
+        function ShowPerson(){
+            let person={
+                name:"Alice",
+                age:30,
+                job:"Developer"
+            };
+            let info="Name:"+person.name+", Age:"+person.age+", Job:"+person.job;
+            document.getElementById("personinfo").textContent=info;
+        }
+        function ShowBooks(){
+            let books=[{title:"1",author:"1"},{title:"2",author:"2"},{title:"3",author:"3"}];
+            let info="";
+            for(let i=0;i<books.length;i++){
+                info+="Title:"+book[i].title+", Author:"+book[i].author+"\n";
+            }
+            document.getElementById("bookinfo").textContent=info;
+        }
     </script>
 </head>
 <body>
@@ -71,5 +126,21 @@
     <div id="list_2"></div>
     <input type="number" id="listsize" placeholder="Enter number of items">
     <button onclick="GenerateList()">Generate list</button>
+    <h2>Fruits</h2>
+    <div id="fruitslist"></div>
+    <button onclick="ShowFruits()">Show Fruits</button>
+    <h2>Animals</h2>
+    <div id="animalslist"></div>
+    <button onclick="ShowAnimals()">Show Animals</button>
+    <h2>My To-Do List</h2> 
+    <input type="text" id="todoInput" placeholder="Enter a task">
+    <button onclick="AddToDo()">Add Task</button>
+    <div id="todolist"></div>
+    <h2>Person Info</h2>
+    <div id="personinfo"></div>
+    <button onclick="ShowPerson()">Show Person</button>
+    <h2>Books Info</h2>
+    <div id="bookinfo"></div>
+    <button onclick="Showbook()">Show Book</button>
 </body>
 </html>
